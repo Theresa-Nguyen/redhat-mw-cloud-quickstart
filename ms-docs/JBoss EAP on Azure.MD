@@ -1,33 +1,42 @@
 ---
-title: Quickstart - JBoss EAP on Azure for enterprise Java apps
-description: Deploy JBoss EAP on Azure on Red Hat Enterprise Linux VM for enterprise Java apps
+title: Quickstart - JBoss EAP on Azure for enterprise Java applications
+description: Deploy enterprise Java apps using JBoss EAP with Red Hat Enterpise Linux (RHEL) VM on Azure
 author: SpektraSystems
-ms.author: <To be Updated>
+ms.author: Theresa Nguyen
 ms.topic: quickstart
-ms.date: 05/11/2020
+ms.date: 07/30/2020
 ---
 
-# Quickstart: JBoss EAP on Azure for enterprise Java apps
+# Deploy enterprise Java applications to Azure with JBoss EAP on Red Hat Enterprise Linux
 
-This quickstart shows you how to deploy JBoss EAP on top of Red Hat Enterprise Linux. JBoss EAP (Enterprise Application Platform) is an open source platform for highly transactional, web-scale Java applications. EAP includes everything needed to build, run, deploy, and manage enterprise Java applications in a variety of environments, including on-premises, virtual environments, and in private, public, and hybrid clouds.
+This quickstart shows you how to deploy [JBoss Enterprise (EAP)](https://www.redhat.com/en/technologies/jboss-middleware/application-platform) on [Red Hat Enterprise Linux (RHEL)](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux) to Azure Virtual Machines (VM) and Virtual Machine Scale Sets (VMSS). JBoss EAP is an open source application server platform that delivers enterprise-grade security, scalability, and performance. RHEL is an open source operating system (OS) platform, where you can scale existing apps and roll out emerging technologies across all environments. JBoss EAP and RHEL includes everything needed to build, run, deploy, and manage enterprise Java applications in any environment, including on-premises, virtual environments, and in private, public, or hybrid clouds. 
 
 ## Prerequisites
 
-* Azure Subscription with the specified payment method.  RHEL 7.7/8.0 are [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps?filters=partners%3Blinux&page=1&search=Red%20Hat%20Enterprise%20Linux) products and require a payment method to be specified in the Azure Subscription. Note that you will not be able to deploy Red Hat Enterprise Linux in an MSDN subscription.
+* Azure Subscription - If you do not already have an account, you can activate your [MSDN subscriber benefits](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) or sign up for a [free account] (https://azure.microsoft.com/free/).
 
-* To install JBoss EAP, you need to have a Red Hat Account and your Red Hat Subscription Management (RHSM) account needs EAP entitlement to use the Enterprise Application Platform. Set up an account on the [Red Hat Customer Portal](https://access.redhat.com/). If you don't have EAP entitlement, obtain a [JBoss EAP evaluation subscription](https://access.redhat.com/products/red-hat-jboss-enterprise-application-platform/evaluation) before you get started.
+* [Azure Command-Line Interface](https://docs.microsoft.com/en-us/cli/azure/overview).
+
+* RHEL options - Choose between Pay-As-You-Go (PAYG) or Bring-Your-Own-Subscription (BYOS). For BYOS, you will need to activate your [Red Hat Cloud Access](https://access.redhat.com/) RHEL Gold Image.
+
+* JBoss EAP installation - You need to have a Red Hat Account and your Red Hat Subscription Management (RHSM) account must have JBoss EAP entitlement to download Red Hat tested and certified JBoss EAP version.  If you don't have EAP entitlement, obtain a [JBoss EAP evaluation subscription](https://access.redhat.com/products/red-hat-jboss-enterprise-application-platform/evaluation) before you get started. If you would like to create a new Red Hat subscription, go to [Red Hat Customer Portal](https://access.redhat.com/) and set up an account.
 
 ## Use case
 
-Red Hat JBoss Enterprise Application Platform (JBoss EAP) 7.2 is a certified implementation of the Java Enterprise Edition (Java EE) 8 specification. JBoss EAP provides preconfigured options for features such as high-availability clustering, messaging, and distributed caching. It also enables users to write, deploy, and run applications using the various APIs and services that JBoss EAP provides.  For additional information on JBoss EAP visit [Introduction to JBoss EAP 7.2](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/introduction_to_jboss_eap/index#about_eap).
-
-You can develop the following applications with JBoss EAP 7.2:
+### Migrate to JBoss EAP
+Red Hat JBoss Enterprise Application Platform (JBoss EAP) 7.2 and 7.3 is a certified implementation of the Java Enterprise Edition (Java EE) 8 specification. JBoss EAP provides preconfigured options for features such as high-availability (HA) clustering, messaging, and distributed caching. It also enables users to write, deploy, and run applications using the various APIs and services that JBoss EAP provides.  For additional information on JBoss EAP visit [Introduction to JBoss EAP 7.2](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html-single/introduction_to_jboss_eap/index#about_eap).
+ or [Introduction to JBoss EAP 7.3](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html/introduction_to_jboss_eap/index).
+ 
+ You can develop the following applications with JBoss EAP:
 
 * Web Services Applications - Web services provide a standard means of interoperating among different software applications. Each application can run on a variety of platforms and frameworks. Web services facilitate internal, heterogeneous subsystem communication. To learn more about web service development visit [Developing Web Services](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html/developing_web_services_applications/index).
 
 * EJB Applications - Enterprise JavaBeans (EJB) 3.2 is an API for developing distributed, transactional, secure and portable Java EE applications through the use of server-side components called Enterprise Beans. Enterprise Beans implement the business logic of an application in a decoupled manner that encourages reuse. Learn more by visiting [Developing EJB Applications](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html/developing_ejb_applications/index).
 
 * Hibernate Applications - Developers and administrators can develop and deploy JPA/Hibernate applications with Red Hat JBoss Enterprise Application Platform. Hibernate Core is an object-relational mapping framework for the Java language. It provides a framework for mapping an object-oriented domain model to a relational database, allowing applications to avoid direct interaction with the database. Hibernate EntityManager implements the programming interfaces and lifecycle rules as defined by the [Java Persistence 2.1 specification](https://www.jcp.org/en/jsr/detail?id=338). Together with Hibernate Annotations, this wrapper implements a complete (and standalone) JPA persistence solution on top of the mature Hibernate Core. Additional information on [Developing Hiberate Applications](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.2/html/developing_web_services_applications/index) is available from Red Hat. 
+
+### Migrate from on-premises to Azure
+Azure Marketplace offer of JBoss EAP on RHEL will install and provision on Azure VMs or VMSS in less than 20 minutes. You will have a Load Balancer (LB), Private IP for LB and VMs, Virtual Network (VNet) with a single subnet, cluster or stand-alone setup, Network Security Group (NSG), and a sample Java app. 
 
 ## Configuration choice
 

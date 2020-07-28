@@ -186,7 +186,11 @@ The deployment takes approximately 10 minutes to complete.
 
 ## Scaling
 
-In this template the Virtual Machine Scale Set is set to scale manually, which means you can manually increase or decrease the VM instance. Once the template has been deployed you can also change to custom scaling to automatically increase or decrease the number of VM instances. This automated and elastic behavior reduces the management overhead to monitor and optimize the performance. Once the template has been deployed go to your virtual machine scale set and under settings click on Scaling. In the Scaling blade change to "Custom autoscale" and follow instructions to [Automatically scale a virtual machine scale set in the Azure portal](https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal#:~:text=The%20ability%20to%20autoscale%20lets,instances%20in%20your%20scale%20set).
+There are two scaling options for VMSS: Manual Scale or Custom Autoscale. After deployment, you can manually increase or decrease VM instances in the Azure Portal or Azure CLI commmand](https://docs.microsoft.com/cli/azure/monitor/autoscale?view=azure-cli-latest). You can also switch to Custom Autoscale. This automated and elastic behavior reduces the management overhead to monitor and optimize for performance and cost effectiveness. With Custom Autoscale you can set rules to automatically scale your deployment by adding instances based on a schedule or host metrics. 
+
+To change your VMSS scaling options, go to 'Settings' and click on 'Scaling' on the left menu. In 'Scaling' blade, select your scaling configuration and follow the instructions or learn more about [Azure Autoscale](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-portal).
+
+Using Azure CLI - to create the autoscale resource, use [az monitor autoscale create](https://docs.microsoft.com/cli/azure/monitor/autoscale?view=azure-cli-latest#az-monitor-autoscale-create) and to create the rule, use [az monitor autoscale rule](https://docs.microsoft.com/cli/azure/monitor/autoscale/rule?view=azure-cli-latest).
 
 ![alt text](images/autoscale.png)
 
@@ -235,7 +239,7 @@ Select the purple link, to view your private offers.
 
 ![alt text](images/rhel-byos.png)
 
-Please refer to [Using the Azure Custom Script Extension Version 2 with Linux VMs](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/custom-script-linux) for more details on troubleshooting VM custom script extensions.
+Please refer to [Using the Azure Custom Script Extension Version 2 with Linux VMs](https://docs.microsoft.com/azure/virtual-machines/extensions/custom-script-linux) for more details on troubleshooting VM custom script extensions.
 
 ## Support
 

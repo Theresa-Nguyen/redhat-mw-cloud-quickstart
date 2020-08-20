@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.service: virtual-machines-linux
 ms.subservice: workloads
 ms.assetid: 8a4df7bf-be49-4198-800e-db381cda98f5
-ms.date: 08/14/2020
+ms.date: 08/19/2020
 ---
 
 # Deploy enterprise Java applications to Azure with JBoss EAP on Red Hat Enterprise Linux
 
-These Quickstarts templates will show you how to deploy [JBoss Enterprise (EAP)](https://www.redhat.com/en/technologies/jboss-middleware/application-platform) on [Red Hat Enterprise Linux (RHEL)](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux) to Azure Virtual Machines (VM) and Virtual Machine Scale Sets (VMSS), run a sample Java app and validate your deployment. JBoss EAP is an open source application server platform that delivers enterprise-grade security, scalability, and performance. RHEL is an open source operating system (OS) platform, where you can scale existing apps and roll out emerging technologies across all environments. JBoss EAP and RHEL includes everything needed to build, run, deploy, and manage enterprise Java applications in any environment, including on-premises, virtual environments, and in private, public, or hybrid clouds.
+These Quickstart templates will show you how to deploy [JBoss Enterprise (EAP)](https://www.redhat.com/en/technologies/jboss-middleware/application-platform) on [Red Hat Enterprise Linux (RHEL)](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux) to Azure Virtual Machines (VM) and Virtual Machine Scale Sets (VMSS), run a sample Java app and validate your deployment. JBoss EAP is an open source application server platform that delivers enterprise-grade security, scalability, and performance. RHEL is an open source operating system (OS) platform, where you can scale existing apps and roll out emerging technologies across all environments. JBoss EAP and RHEL includes everything needed to build, run, deploy, and manage enterprise Java applications in any environment, including on-premises, virtual environments, and in private, public, or hybrid clouds.
 
 ## Prerequisites
 
@@ -60,7 +60,7 @@ JBoss EAP can also work in Cluster mode, check out [JBoss EAP Clustering](https:
 
 ## Support and subscription notes
 
-These Quickstarts templates are offered as: 
+These Quickstart templates are offered as: 
 
 - RHEL OS is offered as Pay-As-You-Go (PAYG) or Bring-Your-Own-Subscription (BYOS).
 - JBoss EAP is offered as BYOS only.
@@ -73,7 +73,7 @@ Check out [Red Hat Enterprise Linux pricing](https://azure.microsoft.com/pricing
 
 #### Using RHEL OS with BYOS Model
 
-In order to use BYOS for RHEL OS Licensing, you need to have a valid Red Hat subscription with entitlements to use RHEL OS in Azure. Please complete the following prerequisites in order to use RHEL OS through BYOS model before you deploy this Quickstarts template.
+In order to use BYOS for RHEL OS Licensing, you need to have a valid Red Hat subscription with entitlements to use RHEL OS in Azure. Please complete the following prerequisites in order to use RHEL OS through BYOS model before you deploy this Quickstart template.
 
 1. Ensure you have RHEL OS and JBoss EAP entitlements attached to your Red Hat Subscription.
 2. Authorize your Azure Subscription ID to use RHEL BYOS images. Please follow the [Red Hat Subscription Management documentation](https://access.redhat.com/documentation/en-us/red_hat_subscription_management/1/html/red_hat_cloud_access_reference_guide/con-enable-subs) to complete the process which includes these steps:
@@ -161,4 +161,4 @@ You can deploy the template in three following ways :
 * [MS Docs for Red Hat on Azure](https://aka.ms/rhel-docs)
 * [Deploy RHEL 7.7 VM from Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/RedHat.RedHatEnterpriseLinux77-ARM?tab=Overview)
 * [Deploy RHEL 8.0 VM from Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/RedHat.RedHatEnterpriseLinux80-ARM?tab=Overview)
-* For dev/test without Red Hat OS or App Server subscription, run WildFly instead of JBoss EAP: <a href="https://github.com/SpektraSystems/redhat-mw-cloud-quickstart/tree/master/wildfly-standalone-centos8" target="_blank"> WildFly on an Azure CentOS VM</a> - Standalone WildFly 18 with a sample web app on an Azure CentOS 8 VM.
+* For dev/test without Red Hat OS or App Server subscription, run WildFly instead of JBoss EAP: <a href="https://github.com/SpektraSystems/redhat-mw-cloud-quickstart/tree/master/wildfly-standalone-centos8" target="_blank"> WildFly on an Azure CentOS VM</a> - Standalone WildFly with a sample web app on an Azure CentOS VM.

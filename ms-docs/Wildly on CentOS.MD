@@ -1,11 +1,12 @@
 ---
 title: Quickstart - WildFly on CentOS
 description: Deploy Java applications to WildFly on CentOS VM
-services: virtual-machines-linux
-documentationcenter: ''
-author: RockClimberT
-manager: westonh
-editor: ''
+author: Theresa-Nguyen
+ms.author: bicnguy
+ms.topic: quickstart
+ms.service:  virtual-machines-linux
+ms.subservice: workloads
+ms.assetid: 7aa21ef8-9cfb-43e0-bfda-3f10a2a2f3ef
 ms.date: 10/23/2020
 ---
 
@@ -55,13 +56,13 @@ Azure CentOS 8 image is a Pay-As-You-Go (PAYG) VM image and doesn't require the 
 
 You can deploy the template in the following three ways:
 
-- Use PowerShell - Deploy the template by running the following commands: (Check out [Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/?view=azps-2.8.0) for information on installing and configuring Azure PowerShell).
+- Use PowerShell - Deploy the template by running the following commands: (Check out [Azure PowerShell](https://docs.microsoft.com/powershell/azure/) for information on installing and configuring Azure PowerShell).
 
     `New-AzResourceGroup -Name <resource-group-name> -Location <resource-group-location> #use this command when you need to create a new Resource Group for your deployment`
 
     `New-AzResourceGroupDeployment -ResourceGroupName <resource-group-name> -TemplateUri https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/wildfly-standalone-centos8/azuredeploy.json`
     
-- Use Azure CLI - Deploy the template by running the following commands: (Check out [Azure Cross-Platform Command Line](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) for details on installing and configuring the Azure Cross-Platform Command-Line Interface).
+- Use Azure CLI - Deploy the template by running the following commands: (Check out [Azure Cross-Platform Command Line](https://docs.microsoft.com/cli/azure/install-azure-cli) for details on installing and configuring the Azure Cross-Platform Command-Line Interface).
 
     `az group create --name <resource-group-name> --location <resource-group-location> #use this command when you need to create a new Resource Group for your deployment`
 

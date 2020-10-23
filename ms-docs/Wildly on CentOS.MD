@@ -6,12 +6,12 @@ documentationcenter: ''
 author: RockClimberT
 manager: westonh
 editor: ''
-ms.date: 08/06/2020
+ms.date: 10/23/2020
 ---
 
 # Quickstart: WildFly on CentOS 8
 
-This Quickstart shows you how to deploy the standalone node of WildFly of CentOS 8 VM. This is ideal for development and testing of enterprise Java applications on Azure.
+This Quickstart shows you how to deploy the standalone node of WildFly of CentOS 8 VM. This is ideal for development and testing of enterprise Java applications on Azure. Application server subscription is not required to deploy this quickstart.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ This Quickstart shows you how to deploy the standalone node of WildFly of CentOS
 
 WildFly is ideal for development and testing of enterprise Java applications on Azure. List of technologies available in WildFly 18 server configuration profiles are available in the [WildFly Getting Started Guide](https://docs.wildfly.org/18/Getting_Started_Guide.html#getting-started-with-wildfly).
 
-You can use WildFly in either Standalone mode or Cluster mode per your use case. You can ensure high availability of critical Jakarta EE applications by WildFly on a cluster of nodes. Make a small number of application configuration changes, and then deploy the application in the cluster. To learn more about this please check the [WildFly High Availability Guide](https://docs.wildfly.org/18/High_Availability_Guide.html).
+You can use WildFly in either Standalone or Cluster mode per your use case. You can ensure high availability of critical Jakarta EE applications by WildFly on a cluster of nodes. Make a small number of application configuration changes, and then deploy the application in the cluster. To learn more about this please check the [WildFly High Availability Guide](https://docs.wildfly.org/18/High_Availability_Guide.html).
 
 ## Configuration choice
 
@@ -31,7 +31,7 @@ You can also start WildFly instance with alternate configuration by using config
 
 Following are the Standalone Server Configuration files:
 
-- standalone.xml (default) - This is the default file used for starting the WildFly instance. It contains Jakarta web profile certified configuration with the required technologies.
+- standalone.xml (default) - This is the default file used for starting the WildFly instance. It contains Jakarta Web Profile certified configuration with the required technologies.
    
 - standalone-ha.xml - Jakarta EE Web Profile 8 certified configuration with high availability (targeted at web applications).
    
@@ -49,11 +49,11 @@ To learn more about the configurations check the [WildFly Getting Started Guide]
 
 ## Licensing, support, Support and subscription notes
 
-Azure CentOS 8 image is a Pay-As-You-Go (PAYG) VM image and does not require the user to obtain a license. The VM will be licensed automatically after the instance is launched for the first time and the user will be charged hourly rate in addition to Microsoft's Linux VM rates. Click [Linux VM Pricing](https://azure.microsoft.com/pricing/details/virtual-machines/linux/#linux) for details. WildFly is free to download and use and does not require a Red Hat Subscription or any License.
+Azure CentOS 8 image is a Pay-As-You-Go (PAYG) VM image and does not require the user to obtain a license. The VM will be licensed automatically after the instance is launched for the first time and the user will be charged hourly rate in addition to Microsoft's Linux VM rates. Click [Linux VM Pricing](https://azure.microsoft.com/pricing/details/virtual-machines/linux/#linux) for details. WildFly is free to download and use and does not require a Red Hat subscription or license.
 
 ## How to consume
 
-You can deploy the template in the following 3 ways :
+You can deploy the template in the following 3 ways:
 
 - Use PowerShell - Deploy the template by running the following commands: (Check out [Azure Powershell](https://docs.microsoft.com/en-us/powershell/azure/?view=azps-2.8.0) for information on installing and configuring Azure PowerShell).
 
@@ -89,8 +89,8 @@ Stand-alone RHEL virtual machine with sample application:
 
 Clustered RHEL virtual machines with sample application:
 
-* <a href="https://github.com/Azure/azure-quickstart-templates/tree/master/jboss-eap-clustered-multivm-rhel" target="_blank"> JBoss EAP on RHEL (clustered, multi-VM)</a>
+* <a href="https://github.com/Azure/azure-quickstart-templates/tree/master/jboss-eap-clustered-multivm-rhel" target="_blank"> JBoss EAP on RHEL (clustered VMs)</a>
 
 Clustered RHEL virtual machine scale set with sample application:
 
-* <a href="https://github.com/Azure/azure-quickstart-templates/tree/master/jboss-eap-clustered-vmss-rhel" target="_blank"> JBoss EAP on RHEL (clustered, VMSS)</a>
+* <a href="https://github.com/Azure/azure-quickstart-templates/tree/master/jboss-eap-clustered-vmss-rhel" target="_blank"> JBoss EAP on RHEL (clustered VMSS)</a>
